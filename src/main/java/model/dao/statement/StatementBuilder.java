@@ -344,6 +344,11 @@ public class StatementBuilder {
     this.conditionsConditional.add(conditional);
     return this;
   }
+  
+  public StatementBuilder addCondition(Info condition) {
+    
+    return this.addCondition(condition, "and");
+  }
 
   // Função para adicionar um valor para uma condição de um comando
   // Utilizado em updates, selects e deletes

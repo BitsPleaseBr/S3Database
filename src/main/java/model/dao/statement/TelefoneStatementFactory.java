@@ -24,14 +24,14 @@ public class TelefoneStatementFactory extends StatementFactory {
     // Cria um statement para atualizar os dados do telefone utilizando o id do usuário e o tipo
     // como condições
     return createUpdateStatement(Tabela.Telefone, bean.getInfosTel(),
-        new Info[] {TelefoneInfo.IDUser, TelefoneInfo.Tipo}, new Object[] {idUser, tipo}, "and");
+        new Info[] {TelefoneInfo.IDUser, TelefoneInfo.Tipo}, new Object[] {idUser, tipo});
   }
 
   public PreparedStatement deleteStatement(int idUser) {
 
     // Cria um statement para deletar os dados do telefone utilizando o id do usuário como condição
     return createDeleteStatement(Tabela.Telefone, new Info[] {TelefoneInfo.IDUser},
-        new Object[] {idUser}, "and");
+        new Object[] {idUser});
   }
 
   public PreparedStatement deleteStatement(int idUser, int tipo) {
@@ -39,14 +39,14 @@ public class TelefoneStatementFactory extends StatementFactory {
     // Cria um statement para deletar os dados do telefone utilizando o id do usuário e o tipo como
     // condições
     return createDeleteStatement(Tabela.Telefone,
-        new Info[] {TelefoneInfo.IDUser, TelefoneInfo.Tipo}, new Object[] {idUser, tipo}, "and");
+        new Info[] {TelefoneInfo.IDUser, TelefoneInfo.Tipo}, new Object[] {idUser, tipo});
   }
 
   public PreparedStatement selectStatement(int idUser) {
 
     // Cria um statement para obter os dados do telefone utilizando o id do usuário como condição
     return createSelectStatement(Tabela.Telefone, new Info[] {TelefoneInfo.IDUser},
-        new Object[] {idUser}, "and", TelefoneInfo.values());
+        new Object[] {idUser}, TelefoneInfo.values());
   }
 
   public PreparedStatement selectStatement(int idUser, int tipo) {
@@ -54,7 +54,7 @@ public class TelefoneStatementFactory extends StatementFactory {
     // Cria um statement para obter os dados do telefone utilizando o id do usuário e o tipo como
     // condições
     return createSelectStatement(Tabela.Telefone,
-        new Info[] {TelefoneInfo.IDUser, TelefoneInfo.Tipo}, new Object[] {idUser, tipo}, "and",
+        new Info[] {TelefoneInfo.IDUser, TelefoneInfo.Tipo}, new Object[] {idUser, tipo},
         TelefoneInfo.values());
   }
 }

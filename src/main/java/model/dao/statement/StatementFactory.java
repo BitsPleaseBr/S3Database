@@ -28,6 +28,11 @@ public class StatementFactory {
 
     return sb.build();
   }
+  
+  protected PreparedStatement createSelectStatement(Tabela tabela, Info[] conditions, Object[] conditionsValues, Info... infos) {
+    
+    return this.createSelectStatement(tabela, conditions, conditionsValues, "and", infos);
+  }
 
   protected PreparedStatement createUpdateStatement(Tabela tabela,
       HashMap<? extends Info, Object> dados, Info[] conditions, Object[] conditionsValues, String conditional) {
@@ -44,6 +49,11 @@ public class StatementFactory {
 
     return sb.build();
   }
+  
+  protected PreparedStatement createUpdateStatement(Tabela tabela, HashMap<? extends Info, Object> dados, Info[] conditions, Object[]conditionsValues) {
+    
+    return this.createUpdateStatement(tabela, dados, conditions, conditionsValues, "and");
+  }
 
 
   protected PreparedStatement createDeleteStatement(Tabela tabela, Info[] conditions,
@@ -58,5 +68,10 @@ public class StatementFactory {
     }
 
     return sb.build();
+  }
+  
+  protected PreparedStatement createDeleteStatement(Tabela tabela, Info[] conditions, Object[] conditionsValues) {
+    
+    return this.createDeleteStatement(tabela, conditions, conditionsValues, "and");
   }
 }

@@ -24,7 +24,7 @@ public class EnderecoStatementFactory extends StatementFactory {
     // Cria um statement para atualizar os dados do endereço utilizando o id do usuário e o tipo de
     // endereço como condições
     return createUpdateStatement(Tabela.Endereco, bean.getInfosEnd(),
-        new Info[] {EnderecoInfo.IDUser, EnderecoInfo.Tipo}, new Object[] {idUser, tipoEndereco}, "and");
+        new Info[] {EnderecoInfo.IDUser, EnderecoInfo.Tipo}, new Object[] {idUser, tipoEndereco});
   }
 
   public PreparedStatement deleteStatement(int idUser) {
@@ -32,7 +32,7 @@ public class EnderecoStatementFactory extends StatementFactory {
     // Cria um statement para deletar os dados de um endereço utilizando o id do usuário como
     // condição
     return createDeleteStatement(Tabela.Endereco, new Info[] {EnderecoInfo.IDUser},
-        new Object[] {idUser}, "and");
+        new Object[] {idUser});
   }
 
   public PreparedStatement deleteStatement(int idUser, int tipo) {
@@ -40,14 +40,14 @@ public class EnderecoStatementFactory extends StatementFactory {
     // Cria um statement para deletar os dados de um endereço utilizando o id do usuário e o tipo
     // como condições
     return createDeleteStatement(Tabela.Endereco,
-        new Info[] {EnderecoInfo.IDUser, EnderecoInfo.Tipo}, new Object[] {idUser, tipo}, "and");
+        new Info[] {EnderecoInfo.IDUser, EnderecoInfo.Tipo}, new Object[] {idUser, tipo});
   }
 
   public PreparedStatement selectStatement(int idUser) {
 
     // Cria um statement para obter os dados de um endereço utilizando o id do usuário como condição
     return createSelectStatement(Tabela.Endereco, new Info[] {EnderecoInfo.IDUser},
-        new Object[] {idUser}, "and", EnderecoInfo.values());
+        new Object[] {idUser}, EnderecoInfo.values());
   }
 
   public PreparedStatement selectStatement(int idUser, int tipo) {
@@ -55,7 +55,7 @@ public class EnderecoStatementFactory extends StatementFactory {
     // Cria um statement para obter os dados de um endereço utilizando o id do usuário e o tipo como
     // condições
     return createSelectStatement(Tabela.Endereco,
-        new Info[] {EnderecoInfo.IDUser, EnderecoInfo.Tipo}, new Object[] {idUser, tipo}, "and",
+        new Info[] {EnderecoInfo.IDUser, EnderecoInfo.Tipo}, new Object[] {idUser, tipo},
         EnderecoInfo.values());
   }
 }

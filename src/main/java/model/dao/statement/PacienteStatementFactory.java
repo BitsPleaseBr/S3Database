@@ -23,20 +23,20 @@ public class PacienteStatementFactory extends StatementFactory {
     // Cria um statement para atualizar os dados do paciente utilizando o id de usuário como
     // condição
     return createUpdateStatement(Tabela.Paciente, bean.getInfosPac(),
-        new Info[] {PacienteInfo.IDUser}, new Object[] {idUser}, "and");
+        new Info[] {PacienteInfo.IDUser}, new Object[] {idUser});
   }
 
   public PreparedStatement deleteStatement(int id) {
 
     // Cria um statement para deletar os dados do paciente utilizando o id de usuário como condição
     return createDeleteStatement(Tabela.Paciente, new Info[] {PacienteInfo.IDUser},
-        new Object[] {id}, "and");
+        new Object[] {id});
   }
 
   public PreparedStatement selectStatement(int id) {
 
     // Cria um statement para obter os dados do paciente utilizando o id de usuário como condição
     return createSelectStatement(Tabela.Paciente, new Info[] {PacienteInfo.IDUser},
-        new Object[] {id}, "and", PacienteInfo.values());
+        new Object[] {id}, PacienteInfo.values());
   }
 }

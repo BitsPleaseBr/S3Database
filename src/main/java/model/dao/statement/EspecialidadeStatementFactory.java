@@ -16,12 +16,12 @@ public class EspecialidadeStatementFactory extends StatementFactory {
   
   public PreparedStatement selectStatement(String descricao) {
     
-    return createSelectStatement(Tabela.Especialidade, new Info[] {EspecialidadeInfo.Descricao}, new Object[] {descricao}, "and", EspecialidadeInfo.values());
+    return createSelectStatement(Tabela.Especialidade, new Info[] {EspecialidadeInfo.Descricao}, new Object[] {descricao}, EspecialidadeInfo.values());
   }
   
   public PreparedStatement selectStatement(int id) {
     
-    return createSelectStatement(Tabela.Especialidade, new Info[] {EspecialidadeInfo.Id}, new Object[] {id}, "and", EspecialidadeInfo.values());
+    return createSelectStatement(Tabela.Especialidade, new Info[] {EspecialidadeInfo.Id}, new Object[] {id}, EspecialidadeInfo.values());
   }
   
   public PreparedStatement selectStatement(int[] ids) {

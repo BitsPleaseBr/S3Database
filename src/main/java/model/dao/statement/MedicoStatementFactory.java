@@ -23,21 +23,21 @@ public class MedicoStatementFactory extends StatementFactory {
     // Cria um statement para atualizar as informações do médico utilizando o id de usuário como
     // condição
     return createUpdateStatement(Tabela.Medico, bean.getInfosMed(), new Info[] {MedicoInfo.IDUser},
-        new Object[] {idUser}, "and");
+        new Object[] {idUser});
   }
 
   public PreparedStatement deleteStatement(int id) {
 
     // Cria um statement para deletar as informações do médico utilizando o id de usuário como
     // condição
-    return createDeleteStatement(Tabela.Medico, new Info[] {MedicoInfo.IDUser}, new Object[] {id}, "and");
+    return createDeleteStatement(Tabela.Medico, new Info[] {MedicoInfo.IDUser}, new Object[] {id});
   }
 
   public PreparedStatement selectStatement(int id) {
 
     // Cria um statement para obter as informações do médico utilizando o id de usuário como
     // condição
-    return createSelectStatement(Tabela.Medico, new Info[] {MedicoInfo.IDUser}, new Object[] {id}, "and",
+    return createSelectStatement(Tabela.Medico, new Info[] {MedicoInfo.IDUser}, new Object[] {id},
         MedicoInfo.values());
   }
 }

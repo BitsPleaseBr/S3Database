@@ -22,19 +22,19 @@ public class UserStatementFactory extends StatementFactory {
 
     // Cria um statement para atualizar os dados do usuário utilizando o id como condição
     return createUpdateStatement(Tabela.User, bean.getInfosUser(), new Info[] {UserInfo.ID},
-        new Object[] {id}, "and");
+        new Object[] {id});
   }
 
   public PreparedStatement deleteStatement(int id) {
 
     // Cria um statement para deletar os dados do usuário utilizando o id como condição
-    return createDeleteStatement(Tabela.User, new Info[] {UserInfo.ID}, new Object[] {id}, "and");
+    return createDeleteStatement(Tabela.User, new Info[] {UserInfo.ID}, new Object[] {id});
   }
 
   public PreparedStatement selectStatement(int id) {
 
     // Cria um statement para obter os dados do usuário utilizando o id como condição
-    return createSelectStatement(Tabela.User, new Info[] {UserInfo.ID}, new Object[] {id}, "and",
+    return createSelectStatement(Tabela.User, new Info[] {UserInfo.ID}, new Object[] {id},
         UserInfo.values());
   }
 }
