@@ -14,7 +14,7 @@ public abstract class UserDao {
   private UserStatementFactory factory = new UserStatementFactory();
 
   // Função para cadastrar um usuário
-  public int cadastrar(UserBean bean) throws SQLException {
+  protected int cadastrar(UserBean bean) throws SQLException {
 
     // Obtém o PreparedStatement para fazer o cadastro
     PreparedStatement ps = factory.insertStatement(bean);
@@ -34,7 +34,7 @@ public abstract class UserDao {
   }
 
   // Função para alterar um usuário
-  public UserDao alterar(UserBean bean) throws SQLException {
+  protected UserDao alterar(UserBean bean) throws SQLException {
 
     // Altera as informações do usuário no banco
     factory.updateStatement(bean).execute();
@@ -42,7 +42,7 @@ public abstract class UserDao {
   }
 
   // Função para deletar um usuário
-  public UserDao deletar(int id) throws SQLException {
+  protected UserDao deletar(int id) throws SQLException {
 
     // Deleta as informações do usuário do banco
     factory.deleteStatement(id).execute();
@@ -50,7 +50,7 @@ public abstract class UserDao {
   }
 
   // Função para obter um usuário
-  public UserBean selecionar(int id) throws SQLException {
+  protected UserBean selecionar(int id) throws SQLException {
 
     // Faz o query dos dados do usuário
     ResultSet rs = factory.selectStatement(id).executeQuery();

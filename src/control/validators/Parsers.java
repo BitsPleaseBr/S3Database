@@ -1,11 +1,19 @@
 package control.validators;
 
+import java.sql.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class Parsers {
-
+  
+  
+  public static void main(String[] args) {
+    
+    System.out.println(dateParse("08/04/2002"));
+  }
+  
+  
   public static String removeNonNum(String str) {
     return str.replaceAll("\\D", "");
   }
@@ -25,19 +33,17 @@ public class Parsers {
     return str.length() == 11 ? str : null;
   }
 
-  public static String dateParse(Object data) {
-    
-    DateFormat bdFormat = new SimpleDateFormat("yyyy-MM-dd");
+  public static Date dateParse(Object data) {
     DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
     try {
 
-      return format.format(bdFormat.parse(data.toString()));
+      return new Date(format.parse(data.toString()).getTime());
     } catch (ParseException e) {
 
       e.printStackTrace();
     }
-    
-    return format.format(data.toString());
+
+    return null;
   }
 }
